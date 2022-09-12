@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/animate.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/blog.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/blog_responsive.css' %}">
+	<script src="https://kit.fontawesome.com/3906426166.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -122,6 +123,22 @@
 					<div class="single_content">
 						<div class="single_text">
 							<p>{{ post.content }}</p>
+
+							{% if post.file_upload %}
+								<a href="{{ post.file_upload.url }}" class="btn btn-outline-dark" role="button" download>
+									Download:
+									{% if post.get_file_ext == 'csv' %}
+										<i class="fas fa-file-csv"></i>
+									{% elif post.get_file_ext == 'xlsx' or post.get_file_ext == 'xls' %}
+										<i class="fas fa-file-excel"></i>
+									{% elif post.get_file_ext == 'docx' or post.get_file_ext == 'doc' %}
+										<i class="fas fa-file-word"></i>
+									{% else %}
+										<i class="far fa-file"></i>
+									{% endif %}
+									{{ post.get_file_name }}
+								</a>
+							{% endif %}
 						</div>
 					</div>
 				</div>
