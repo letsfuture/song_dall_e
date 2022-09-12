@@ -87,9 +87,10 @@
 		</div>
 	</div>
 
-	<div class="blog">
+	<div class="blog" id="main-area">
 		<div class="container">
 			<div class="row">
+			{% if post_list.exists %}
 				{% for p in post_list %}
 				<!-- Blog Posts -->
 				<div class="blog_posts">
@@ -123,6 +124,9 @@
 							<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>
 					</div>
 				{% endfor %}
+			{% else %}
+				<h3>아직 게시물이 없습니다.</h3>
+			{% endif %}
 			</div>
 		</div>
 	</div>
