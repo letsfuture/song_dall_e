@@ -107,6 +107,9 @@
 							<div class="blog_post_image"><img src="https://picsum.photos/seed/{{ p.id }}/900/400" alt="random_image"></div>
 						{% endif %}
 						<div class="blog_post_title"><h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2></div>
+						{% if p.hook_text %}
+							<div class="home_subtitle"><h5 class="text-muted">{{ p.hook_text }}</h5></div>
+						{% endif %}
 						<div class="blog_post_info">
 							<ul class="d-flex flex-row align-items-start justify-content-start">
 								<li>by <a href="#">작성자명 쓸 위치(개발 예정)</a></li>
@@ -114,8 +117,10 @@
 							</ul>
 						</div>
 						<div class="blog_post_text">
-							<p>{{ p.content }}</p>
+							<p>{{ p.content | truncatewords:45 }}</p>
 						</div>
+							<hr/>
+							<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>
 					</div>
 				{% endfor %}
 			</div>
