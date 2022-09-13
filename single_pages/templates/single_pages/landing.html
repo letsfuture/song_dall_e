@@ -12,8 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/blog.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/blog_responsive.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/responsive.css' %}">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 	<!-- Header -->
 	<header class="header">
 		<div class="header_content d-flex flex-row align-items-center justify-content-center">
-			<div class="logo"><a href="#">Song DALL-E</a></div>
+			<div class="logo"><a href="/">Song DALL-E</a></div>
 			<div class="log_reg">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 					<li><a href="#">Login</a></li>
@@ -31,11 +31,11 @@
 			</div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="about.html">About us</a></li>
-					<li><a href="music.html">Music</a></li>
-					<li><a href="blog.html">News</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/about_us/">About us</a></li>
+					<li><a href="/how_to_use/">How to use</a></li>
+					<li><a href="/create/">Create</a></li>
+					<li><a href="/blog/">Review</a></li>
 				</ul>
 			</nav>
 			<div class="hamburger ml-auto">
@@ -62,11 +62,11 @@
 				</div>
 				<nav class="menu_nav">
 					<ul class="d-flex flex-column align-items-start justify-content-start">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About us</a></li>
-						<li><a href="music.html">Music</a></li>
-						<li><a href="blog.html">News</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/about_us/">About us</a></li>
+						<li><a href="/how_to_use/">How to use</a></li>
+						<li><a href="/create/">Create</a></li>
+						<li class="active"><a href="/blog/">Review</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -83,7 +83,7 @@
 				
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+					<div class="background_image" style="background-image:url(/static/single_pages/images/index.jpg)"></div>
 					<div class="home_container">
 						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
 							<div class="home_content text-center">
@@ -97,7 +97,7 @@
 
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+					<div class="background_image" style="background-image:url(/static/single_pages/images/index.jpg)"></div>
 					<div class="home_container">
 						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
 							<div class="home_content text-center">
@@ -111,7 +111,7 @@
 
 				<!-- Slide -->
 				<div class="owl-item">
-					<div class="background_image" style="background-image:url(images/index.jpg)"></div>
+					<div class="background_image" style="background-image:url(/static/single_pages/images/index.jpg)"></div>
 					<div class="home_container">
 						<div class="home_container_inner d-flex flex-column align-items-center justify-content-center">
 							<div class="home_content text-center">
@@ -130,7 +130,7 @@
 	<!-- Featured Album -->
 
 	<div class="featured_album">
-		<div class="background_image featured_background" style="background-image:url(images/featured.png)"></div>
+		<div class="background_image featured_background" style="background-image:url(/static/single_pages/images/featured.png)"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 offset-lg-6">
@@ -146,7 +146,7 @@
 				<div class="col-md-6">
 					<div class="featured_album_image">
 						<div class="image_overlay"></div>
-						<div class="background_image" style="background-image:url(images/featured_album.jpg)"></div>
+						<div class="background_image" style="background-image:url(/static/single_pages/images/featured_album.jpg)"></div>
 						<!-- <img src="images/featured_album.jpg" alt=""> -->
 					</div>
 				</div>
@@ -300,7 +300,7 @@
 				<div class="col-lg-4 order-lg-2 order-1">
 					<div class="shows_image">
 						<div class="image_overlay"></div>
-						<img src="images/shows.jpg" alt="https://unsplash.com/@anthonydelanoix">
+						<img src="/static/single_pages/images/shows.jpg" alt="https://unsplash.com/@anthonydelanoix">
 					</div>
 				</div>
 
@@ -317,7 +317,7 @@
 				<!-- Artist Image -->
 				<div class="col-lg-4 artist_image_col">
 					<div class="artist_image">
-						<img src="images/artist.png" alt="">
+						<img src="/static/single_pages/images/artist.png" alt="">
 					</div>
 				</div>
 
@@ -332,7 +332,7 @@
 							<p> In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec. Curabitur luctus luctus erat, sit amet facilisis quam congue quis. Quisque ornare luctus erat id dignissim. Nullam ac nunc quis ex porttitor luctus.</p>
 							<p>Integer sed facilisis eros. In iaculis rhoncus velit in malesuada. In hac habitasse platea dictumst. Fusce erat ex, consectetur sit amet ornare suscipit, porta et erat. Donec nec nisi in nibh commodo laoreet. Mauris dapibus justo ut feugiat malesuada. Fusce ultricies ante tortor, non vestibulum est feugiat ut.</p>
 						</div>
-						<div class="artist_sig"><img src="images/sig.png" alt=""></div>
+						<div class="artist_sig"><img src="/static/single_pages/images/sig.png" alt=""></div>
 						<div class="single_player_container d-flex flex-column align-items-start justify-content-center">
 							<div class="single_player">
 								<div id="jplayer_2" class="jp-jplayer"></div>
@@ -386,7 +386,7 @@
 
 	<div class="extra">
 		<div class="extra_container">
-			<div class="background_image" style="background-image:url(images/extra.jpg)"></div>
+			<div class="background_image" style="background-image:url(/static/single_pages/images/extra.jpg)"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-9">
@@ -477,6 +477,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{% static 'blog/plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'blog/plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
 <script src="{% static 'blog/plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
-<script src="{% static 'blog/js/blog.js' %}"></script>
+<script src="{% static 'blog/js/custom.js' %}"></script>
 </body>
 </html>

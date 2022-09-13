@@ -1,163 +1,39 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="ko">
-<head>
-	<title>Song DALL-E</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Mixtape template project">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
-	<link href="{% static 'blog/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/animate.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/blog.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/blog_responsive.css' %}">
-</head>
-<body>
-<div class="super_container">
+{% extends 'blog/base.html' %}
+{% block main_area %}
 
-	<!-- Header -->
-	<header class="header">
-		<div class="header_content d-flex flex-row align-items-center justify-content-center">
-			<div class="logo"><a href="#">Song DALL-E</a></div>
-			<div class="log_reg">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Register</a></li>
-				</ul>
-			</div>
-			<nav class="main_nav">
-				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About us</a></li>
-					<li><a href="music.html">How to use</a></li>
-					<li><a href="contact.html">Create</a></li>
-					<li class="active"><a href="blog.html">Review</a></li>
-				</ul>
-			</nav>
-			<div class="hamburger ml-auto">
-				<div class="d-flex flex-column align-items-end justify-content-between">
-					<div></div>
-					<div></div>
-					<div></div>
+	{% if post_list.exists %}
+		{% for p in post_list %}
+			<!-- Blog Post -->
+			<div class="blog_post">
+				<div class="blog_post_date d-flex flex-column align-items-center justify-content-center">
+					<div>Sep</div>
+					<div>{{ p.created_at.day }}</div>
+					<div>{{ p.created_at.year }}</div>
 				</div>
-			</div>
-		</div>
-	</header>
-
-	<!-- Menu -->
-
-	<div class="menu">
-		<div>
-			<div class="menu_overlay"></div>
-			<div class="menu_container d-flex flex-column align-items-start justify-content-center">
-				<div class="menu_log_reg">
+				{% if p.head_image %}
+					<div class="blog_post_image"><img src="{{ p.head_image.url }}" alt="{{ p }} head image"></div>
+				{% else %}
+					<div class="blog_post_image"><img src="https://picsum.photos/seed/{{ p.id }}/900/400" alt="random_image"></div>
+				{% endif %}
+				<div class="blog_post_title"><h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2></div>
+				{% if p.hook_text %}
+					<div class="home_subtitle"><h5 class="text-muted">{{ p.hook_text }}</h5></div>
+				{% endif %}
+				<div class="blog_post_info">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
-						<li><a href="#">Login</a></li>
-						<li><a href="#">Register</a></li>
+						<li>by <a href="#">작성자명 쓸 위치(개발 예정)</a></li>
+						<li><a href="#">2 Comments</a></li>
 					</ul>
 				</div>
-				<nav class="menu_nav">
-					<ul class="d-flex flex-column align-items-start justify-content-start">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About us</a></li>
-						<li><a href="music.html">How to use</a></li>
-						<li><a href="contact.html">Create</a></li>
-						<li class="active"><a href="blog.html">Review</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
-
-	<!-- Home -->
-
-	<div class="home">
-		<div class="home_inner">
-			<!-- Image artist: https://unsplash.com/@yoannboyer -->
-			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'blog/images/blog.jpg' %}" data-speed="0.8"></div>
-			<div class="home_container">
-				<div class="home_content text-center">
-					<div class="home_subtitle">Just us</div>
-					<div class="home_title">Reviews</div>
+				<div class="blog_post_text">
+					<p>{{ p.content | truncatewords:45 }}</p>
 				</div>
+					<hr/>
+					<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>
 			</div>
-		</div>
-	</div>
+		{% endfor %}
+	{% else %}
+		<h3>아직 게시물이 없습니다.</h3>
+	{% endif %}
 
-	<div class="blog" id="main-area">
-		<div class="container">
-			<div class="row">
-			{% if post_list.exists %}
-				{% for p in post_list %}
-				<!-- Blog Posts -->
-				<div class="blog_posts">
-
-					<!-- Blog Post -->
-					<div class="blog_post">
-						<div class="blog_post_date d-flex flex-column align-items-center justify-content-center">
-							<div>Sep</div>
-							<div>{{ p.created_at.day }}</div>
-							<div>{{ p.created_at.year }}</div>
-						</div>
-						{% if p.head_image %}
-							<div class="blog_post_image"><img src="{{ p.head_image.url }}" alt="{{ p }} head image"></div>
-						{% else %}
-							<div class="blog_post_image"><img src="https://picsum.photos/seed/{{ p.id }}/900/400" alt="random_image"></div>
-						{% endif %}
-						<div class="blog_post_title"><h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2></div>
-						{% if p.hook_text %}
-							<div class="home_subtitle"><h5 class="text-muted">{{ p.hook_text }}</h5></div>
-						{% endif %}
-						<div class="blog_post_info">
-							<ul class="d-flex flex-row align-items-start justify-content-start">
-								<li>by <a href="#">작성자명 쓸 위치(개발 예정)</a></li>
-								<li><a href="#">2 Comments</a></li>
-							</ul>
-						</div>
-						<div class="blog_post_text">
-							<p>{{ p.content | truncatewords:45 }}</p>
-						</div>
-							<hr/>
-							<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>
-					</div>
-				{% endfor %}
-			{% else %}
-				<h3>아직 게시물이 없습니다.</h3>
-			{% endif %}
-			</div>
-		</div>
-	</div>
-
-	<!-- Footer -->
-
-	<footer class="footer">
-		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
-		<div class="copyright_bar">
-			<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</span>
-		</div>
-	</footer>
-</div>
-
-<script src="{% static 'blog/js/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'blog/styles/bootstrap-4.1.2/popper.js' %}"></script>
-<script src="{% static 'blog/styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
-<script src="{% static 'blog/plugins/greensock/TweenMax.min.js' %}"></script>
-<script src="{% static 'blog/plugins/greensock/TimelineMax.min.js' %}"></script>
-<script src="{% static 'blog/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
-<script src="{% static 'blog/plugins/greensock/animation.gsap.min.js' %}"></script>
-<script src="{% static 'blog/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
-<script src="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
-<script src="{% static 'blog/plugins/easing/easing.js' %}"></script>
-<script src="{% static 'blog/plugins/progressbar/progressbar.min.js' %}"></script>
-<script src="{% static 'blog/plugins/parallax-js-master/parallax.min.js' %}"></script>
-<script src="{% static 'blog/plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
-<script src="{% static 'blog/plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
-<script src="{% static 'blog/js/blog.js' %}"></script>
-</body>
-</html>
+{% endblock %}
