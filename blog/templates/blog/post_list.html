@@ -28,8 +28,9 @@
 				<div class="blog_post_text">
 					<p>{{ p.content | truncatewords:45 }}</p>
 				</div>
-					<hr/>
-					<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>
+					<br>
+<!--					<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>-->
+					<div class="button button_3 trans_200"><a href="{{p.get_absolute_url}}">Read More →</a></div>
 			</div>
 		{% endfor %}
 	{% else %}
