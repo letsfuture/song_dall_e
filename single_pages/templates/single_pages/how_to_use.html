@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ko">
 <head>
-<title>Elements</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Mixtape template project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
-<link href="{% static 'blog/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/elements.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/elements_responsive.css' %}">
+<title>About us</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Mixtape template project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+	<link href="{% static 'blog/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/about.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/about_responsive.css' %}">
 </head>
 <body>
 
@@ -46,7 +49,6 @@
 	</header>
 
 	<!-- Menu -->
-
 	<div class="menu">
 		<div>
 			<div class="menu_overlay"></div>
@@ -61,7 +63,7 @@
 					<ul class="d-flex flex-column align-items-start justify-content-start">
 						<li><a href="/">Home</a></li>
 						<li><a href="/about_us/">About us</a></li>
-						<li><a href="/how_to_use/">How_to_use</a></li>
+						<li><a href="/how_to_use/">How to use</a></li>
 						<li><a href="/create/">Create</a></li>
 						<li><a href="/blog/">Review</a></li>
 					</ul>
@@ -71,11 +73,10 @@
 	</div>
 
 	<!-- Home -->
-
 	<div class="home">
 		<div class="home_inner">
-			<!-- Image artist: https://unsplash.com/@tanelah -->
-			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/static/single_pages/images/elements.jpg" data-speed="0.8"></div>
+			<!-- Image artist: https://unsplash.com/@yoannboyer -->
+<!--			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/static/single_pages/images/single.jpg" data-speed="0.8"></div>-->
 			<div class="home_container">
 				<div class="home_content text-center">
 					<div class="home_subtitle">Method</div>
@@ -85,251 +86,238 @@
 		</div>
 	</div>
 
-	<!-- Elements -->
+	<!-- Discs -->
+	<div class="discs">
+		<div class="container">
+			<div class="row discs_row">
+				
+				<!-- Disc -->
+				<div class="col-xl-4 col-md-6">
+					<div class="disc">
+						<a href="single.html">
+							<div class="disc_image"><img src="/static/single_pages/images/disc_1.jpg" alt="https://unsplash.com/@tanelah"></div>
+							<div class="disc_container">
+								<div>
+									<div class="disc_content_1">
+										<div class="disc_title">D(Half Moon)</div>
+										<div class="disc_subtitle">딘(DEAN)</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
 
-	<div class="elements">
+				<!-- Disc -->
+				<div class="col-xl-4 col-md-6">
+					<div class="disc">
+						<a href="single.html">
+							<div class="disc_image"><img src="/static/single_pages/images/disc_2.jpg" alt="https://unsplash.com/@kasperrasmussen"></div>
+							<div class="disc_container">
+								<div>
+									<div class="disc_content_2 d-flex flex-column align-items-center justify-content-center">
+										<div>
+											<div class="disc_title">Mixtape</div>
+											<div class="disc_subtitle">the world is ours</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!-- Disc -->
+				<div class="col-xl-4 col-md-6">
+					<div class="disc">
+						<a href="single.html">
+							<div class="disc_image"><img src="/static/single_pages/images/disc_3.jpg" alt="https://unsplash.com/@photones11"></div>
+							<div class="disc_container">
+								<div>
+									<div class="disc_content_3">
+										<div>
+											<div class="disc_title">Mixtape</div>
+											<div class="disc_subtitle">Singles</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!-- Disc -->
+				<div class="col-xl-4 col-md-6">
+					<div class="disc">
+						<a href="single.html">
+							<div class="disc_image"><img src="/static/single_pages/images/disc_4.jpg" alt="https://unsplash.com/@rexcuando"></div>
+							<div class="disc_container">
+								<div>
+									<div class="disc_content_4 d-flex flex-column align-items-start justify-content-end">
+										<div class="text-left">
+											<div class="disc_title">Mixtape</div>
+											<div class="disc_subtitle">1983</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!-- Disc -->
+				<div class="col-xl-4 col-md-6">
+					<div class="disc">
+						<a href="single.html">
+							<div class="disc_image"><img src="/static/single_pages/images/disc_5.jpg" alt="https://unsplash.com/@alicemoore"></div>
+							<div class="disc_container">
+								<div>
+									<div class="disc_content_5">
+										<div class="disc_title">Mixtape</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<!-- Disc -->
+				<div class="col-xl-4 col-md-6">
+					<div class="disc">
+						<a href="single.html">
+							<div class="disc_image"><img src="/static/single_pages/images/disc_6.jpg" alt="https://unsplash.com/@arstyy"></div>
+							<div class="disc_container">
+								<div>
+									<div class="disc_content_6">
+										<div class="disc_title">Mixtape</div>
+										<div class="disc_subtitle">Music For the People</div>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Artist -->
+
+	<div class="artist">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/static/single_pages/images/artist_2.jpg" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col">
+
+				<!-- Artist Content -->
+				<div class="col-lg-7 offset-lg-5">
+					<div class="artist_content">
+						<div class="section_title_container">
+							<div class="section_subtitle">Events</div>
+							<div class="section_title"><h1>The Artist</h1></div>
+						</div>
+						<div class="artist_text">
+							<p> In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec. Curabitur luctus luctus erat, sit amet facilisis quam congue quis. Quisque ornare luctus erat id dignissim. Nullam ac nunc quis ex porttitor luctus.</p>
+							<p>Integer sed facilisis eros. In iaculis rhoncus velit in malesuada. In hac habitasse platea dictumst. Fusce erat ex, consectetur sit amet ornare suscipit, porta et erat. Donec nec nisi in nibh commodo laoreet. Mauris dapibus justo ut feugiat malesuada. Fusce ultricies ante tortor, non vestibulum est feugiat ut.</p>
+						</div>
+						<div class="artist_sig"><img src="/static/single_pages/images/sig.png" alt=""></div>
+						<div class="single_player_container d-flex flex-column align-items-start justify-content-center">
+							<div class="single_player">
+								<div id="jplayer_2" class="jp-jplayer"></div>
+								<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
+									<div class="jp-type-single">
+										<div class="player_details d-flex flex-row align-items-center justify-content-start">
+											<div class="jp-details">
+												<div>playing</div>
+												<div class="jp-title" aria-label="title">&nbsp;</div>
+											</div>
+											<div class="jp-controls-holder ml-auto">
+												<button class="jp-play" tabindex="0"></button>
+											</div>
+										</div>
+										<div class="player_controls">
+											<div class="jp-gui jp-interface d-flex flex-row align-items-center justify-content-start">
+												<div class="jp-controls-holder time_controls d-flex flex-row align-items-center justify-content-start">
+													<div><div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div></div>
+													<div class="jp-progress">
+														<div class="jp-seek-bar">
+															<div class="jp-play-bar"></div>
+														</div>
+													</div>
+													<div><div class="jp-duration ml-auto" role="timer" aria-label="duration">&nbsp;</div></div>
+												</div>
+												<div class="jp-volume-controls d-flex flex-row align-items-center justify-content-start ml-auto">
+													<button class="jp-mute" tabindex="0"></button>
+													<div class="jp-volume-bar">
+														<div class="jp-volume-bar-value"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="jp-no-solution">
+											<span>Update Required</span>
+											To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Milestones -->
+
+	<div class="milestones">
+		<div class="milestones_container">
+			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="/static/single_pages/images/milestones.jpg" data-speed="0.8"></div>
+			<div class="container">
+				<div class="row milestones_row">
 					
-					<!-- Buttons -->
-					<div class="buttons">
-						<div class="elements_title">Buttons</div>
-						<div class="buttons_container d-flex flex-row align-items-start justify-content-start flex-wrap">
-							<div class="button button_1 trans_200"><a href="#">Send Message</a></div>
-							<div class="button button_2 trans_200"><a href="#">Send Message</a></div>
-							<div class="button button_3 trans_200"><a href="#">Send Message</a></div>
-						</div>
-					</div>
-
-					<!-- Accordions & Tabs -->
-					<div class="acc_tabs">
-						<div class="elements_title">Accordions & Tabs</div>
-						<div class="row acc_tabs_row">
-							
-							<!-- Accordions -->
-							<div class="col-lg-6">
-								<div class="accordions">
-
-									<!-- Accordion -->
-									<div class="accordion_container">
-										<div class="accordion d-flex flex-row align-items-center"><div>Pellentesque lobortis neque non sem dapibus, non rutrum</div></div>
-										<div class="accordion_panel">
-											<div>
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec.</p>
-											</div>
-										</div>
-									</div>
-									
-									<!-- Accordion -->
-									<div class="accordion_container">
-										<div class="accordion d-flex flex-row align-items-center"><div>Lobortis neque non sem dapibus, non rutrum dolor pretium</div></div>
-										<div class="accordion_panel">
-											<div>
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec.</p>
-											</div>
-										</div>
-									</div>
-
-									<!-- Accordion -->
-									<div class="accordion_container">
-										<div class="accordion d-flex flex-row align-items-center active"><div>Pellentesque lobortis neque non sem dapibus, non rutrum</div></div>
-										<div class="accordion_panel">
-											<div>
-												<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec.</p>
-											</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-
-							<!-- Tabs -->
-							<div class="col-lg-6 tabs_col">
-								<div class="tabs">
-									<div class="tabs_container">
-										<div class="tabs d-flex flex-row align-items-center justify-content-start flex-wrap">
-											<div class="tab">Lorem ipsum</div>
-											<div class="tab">Maecenas ornare</div>
-											<div class="tab active">Lobortis ultrices</div>
-										</div>
-										<div class="tab_panels">
-											<div class="tab_panel">
-												<div class="tab_panel_content">
-													<div class="tab_text">
-														<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec.</p>
-													</div>
-												</div>
-											</div>
-											<div class="tab_panel">
-												<div class="tab_panel_content">
-													<div class="tab_text">
-														<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec.</p>
-													</div>
-												</div>
-											</div>
-											<div class="tab_panel active">
-												<div class="tab_panel_content">
-													<div class="tab_text">
-														<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin est in libero pretium interdum. Nullam volutpat dui sem, ac congue purus luctus nec.</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+					<!-- Milestone -->
+					<div class="col-xl-3 col-md-6 milestone_col">
+						<div class="milestone d-flex flex-row align-items-center justify-content-start">
+							<div class="milestone_icon"><img src="/static/single_pages/images/icon_1.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
+							<div class="milestone_content">
+								<div class="milestone_counter" data-end-value="298" data-sign-after="k">0</div>
+								<div class="milestone_text">Albums sold</div>
 							</div>
 						</div>
 					</div>
 
-					<!-- Loaders -->
-					<div class="loaders">
-						<div class="elements_title">Loaders</div>
-						<div class="row loaders_row">
-
-							<!-- Loader -->
-							<div class="col-xl-3 col-md-6 loader_col">
-								<!-- Loader -->
-								<div class="loader_container text-center">
-									<div class="loader text-center" data-perc="0.90"></div>
-									<div class="loader_content">
-										<div class="loader_title">Live Music</div>
-									</div>
-								</div>
+					<!-- Milestone -->
+					<div class="col-xl-3 col-md-6 milestone_col">
+						<div class="milestone d-flex flex-row align-items-center justify-content-start">
+							<div class="milestone_icon"><img src="/static/single_pages/images/icon_2.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
+							<div class="milestone_content">
+								<div class="milestone_counter" data-end-value="183">0</div>
+								<div class="milestone_text">Live Concerts</div>
 							</div>
-
-							<!-- Loader -->
-							<div class="col-xl-3 col-md-6 loader_col">
-								<!-- Loader -->
-								<div class="loader_container text-center">
-									<div class="loader text-center" data-perc="0.80"></div>
-									<div class="loader_content">
-										<div class="loader_title">Fans</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Loader -->
-							<div class="col-xl-3 col-md-6 loader_col">
-								<!-- Loader -->
-								<div class="loader_container text-center">
-									<div class="loader text-center" data-perc="1.00"></div>
-									<div class="loader_content">
-										<div class="loader_title">Good Music</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Loader -->
-							<div class="col-xl-3 col-md-6 loader_col">
-								<!-- Loader -->
-								<div class="loader_container text-center">
-									<div class="loader text-center" data-perc="0.75"></div>
-									<div class="loader_content">
-										<div class="loader_title">Crazy</div>
-									</div>
-								</div>
-							</div>
-
 						</div>
 					</div>
 
-					<!-- Milestones -->
-					<div class="milestones">
-						<div class="elements_title">Milestones</div>
-						<div class="row milestones_row">
-					
-							<!-- Milestone -->
-							<div class="col-xl-3 col-md-6 milestone_col">
-								<div class="milestone d-flex flex-row align-items-center justify-content-start">
-									<div class="milestone_icon"><img src="/static/single_pages/images/icon_1.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-									<div class="milestone_content">
-										<div class="milestone_counter" data-end-value="298" data-sign-after="k">0</div>
-										<div class="milestone_text">Albums sold</div>
-									</div>
-								</div>
+					<!-- Milestone -->
+					<div class="col-xl-3 col-md-6 milestone_col">
+						<div class="milestone d-flex flex-row align-items-center justify-content-start">
+							<div class="milestone_icon"><img src="/static/single_pages/images/icon_3.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
+							<div class="milestone_content">
+								<div class="milestone_counter" data-end-value="37">0</div>
+								<div class="milestone_text">Awards won</div>
 							</div>
-
-							<!-- Milestone -->
-							<div class="col-xl-3 col-md-6 milestone_col">
-								<div class="milestone d-flex flex-row align-items-center justify-content-start">
-									<div class="milestone_icon"><img src="/static/single_pages/images/icon_2.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-									<div class="milestone_content">
-										<div class="milestone_counter" data-end-value="183">0</div>
-										<div class="milestone_text">Live Concerts</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Milestone -->
-							<div class="col-xl-3 col-md-6 milestone_col">
-								<div class="milestone d-flex flex-row align-items-center justify-content-start">
-									<div class="milestone_icon"><img src="/static/single_pages/images/icon_3.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-									<div class="milestone_content">
-										<div class="milestone_counter" data-end-value="37">0</div>
-										<div class="milestone_text">Awards won</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Milestone -->
-							<div class="col-xl-3 col-md-6 milestone_col">
-								<div class="milestone d-flex flex-row align-items-center justify-content-start">
-									<div class="milestone_icon"><img src="/static/single_pages/images/icon_4.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-									<div class="milestone_content">
-										<div class="milestone_counter" data-end-value="14">0</div>
-										<div class="milestone_text">New Singles</div>
-									</div>
-								</div>
-							</div>
-
 						</div>
 					</div>
 
-					<!-- Icon Boxes -->
-					<div class="icon_boxes">
-						<div class="elements_title">Icon Boxes</div>
-						<div class="row icon_boxes_row">
-							
-							<!-- Icon Box -->
-							<div class="col-lg-4">
-								<div class="icon_box">
-									<div class="ib_title_container d-flex flex-row align-items-center justify-content-start">
-										<div class="ib_icon"><img src="/static/single_pages/images/icon_1.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-										<div class="ib_title">Live Music</div>
-									</div>
-									<div class="ib_text">
-										<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin.</p>
-									</div>
-								</div>
+					<!-- Milestone -->
+					<div class="col-xl-3 col-md-6 milestone_col">
+						<div class="milestone d-flex flex-row align-items-center justify-content-start">
+							<div class="milestone_icon"><img src="/static/single_pages/images/icon_4.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
+							<div class="milestone_content">
+								<div class="milestone_counter" data-end-value="14">0</div>
+								<div class="milestone_text">New Singles</div>
 							</div>
-
-							<!-- Icon Box -->
-							<div class="col-lg-4">
-								<div class="icon_box">
-									<div class="ib_title_container d-flex flex-row align-items-center justify-content-start">
-										<div class="ib_icon"><img src="/static/single_pages/images/icon_2.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-										<div class="ib_title">Many Awards</div>
-									</div>
-									<div class="ib_text">
-										<p>Vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin.</p>
-									</div>
-								</div>
-							</div>
-
-							<!-- Icon Box -->
-							<div class="col-lg-4">
-								<div class="icon_box">
-									<div class="ib_title_container d-flex flex-row align-items-center justify-content-start">
-										<div class="ib_icon"><img src="/static/single_pages/images/icon_3.svg" alt="https://www.flaticon.com/authors/smashicons"></div>
-										<div class="ib_title">New Singles</div>
-									</div>
-									<div class="ib_text">
-										<p>In vitae nisi aliquam, scelerisque leo a, volutpat sem. Vivamus rutrum dui fermentum eros hendrerit, id lobortis leo volutpat. Maecenas sollicitudin.</p>
-									</div>
-								</div>
-							</div>
-
 						</div>
 					</div>
 
@@ -410,6 +398,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{% static 'blog/plugins/easing/easing.js' %}"></script>
 <script src="{% static 'blog/plugins/progressbar/progressbar.min.js' %}"></script>
 <script src="{% static 'blog/plugins/parallax-js-master/parallax.min.js' %}"></script>
-<script src="{% static 'blog/js/elements.js' %}"></script>
+<script src="{% static 'blog/plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
+<script src="{% static 'blog/plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
+<script src="{% static 'blog/js/about.js' %}"></script>
 </body>
 </html>

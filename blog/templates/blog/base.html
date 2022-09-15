@@ -50,7 +50,7 @@
 	</header>
 
 	<!-- Menu -->
-	<div class="menu">
+	<div class="menu" id="categories-card">
 		<div>
 			<div class="menu_overlay"></div>
 			<div class="menu_container d-flex flex-column align-items-start justify-content-center">
@@ -87,11 +87,87 @@
 		</div>
 	</div>
 
+	<!-- Blog -->
 	<div class="blog" id="main-area">
 		<div class="container">
 			<div class="row">
-				{% block main_area %}
-				{% endblock %}
+				<!-- Blog Posts -->
+				<div class="col-lg-9">
+					<div class="blog_posts">
+						{% block main_area %}
+						{% endblock %}
+					</div>
+				</div>
+				<!-- Sidebar -->
+				<div class="col-lg-3">
+					<div class="sidebar">
+						<div class="sidebar_section">
+							<div class="sidebar_title">Archive</div>
+							<div class="sidebar_list">
+								<ul>
+									<li><a href="#">February 2017</a></li>
+									<li><a href="#">September 2017</a></li>
+									<li><a href="#">May 2018</a></li>
+									<li><a href="#">June 2018</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="sidebar_section" id="categories-card">
+							<div class="sidebar_title">Categories</div>
+							<div class="sidebar_list">
+								<ul>
+<!--									<li><a href="#">Audio</a></li>-->
+<!--									<li><a href="#">News</a></li>-->
+<!--									<li><a href="#">Photos</a></li>-->
+<!--									<li><a href="#">Releases</a></li>-->
+<!--									<li><a href="#">Uncategorized</a></li>-->
+<!--									<li><a href="#">Video</a></li>-->
+									{% for category in categories %}
+									<li>
+										<a href="{{ category.get_absolute_url }}">{{ category }} ({{ category.post_set.count }})</a>
+									</li>
+									{% endfor %}
+									<li>
+										<a href="/blog/category/no_category/">미분류 ({{ no_category_post_count }})</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="sidebar_section">
+							<div class="sidebar_title">Latest News</div>
+							<div class="latest_news_list">
+
+								<!-- Latest News -->
+								<div class="latest_news d-flex flex-row align-items-start justify-content-start">
+									<div class="latest_news_image"><img src="images/latest_1.jpg" alt="https://unsplash.com/@dannykekspro"></div>
+									<div class="latest_news_content">
+										<div class="latest_news_date"><a href="#">July 26, 2018</a></div>
+										<div class="latest_news_title"><a href="#">How to get the best playlist</a></div>
+									</div>
+								</div>
+
+								<!-- Latest News -->
+								<div class="latest_news d-flex flex-row align-items-start justify-content-start">
+									<div class="latest_news_image"><img src="images/latest_2.jpg" alt="https://unsplash.com/@rexcuando"></div>
+									<div class="latest_news_content">
+										<div class="latest_news_date"><a href="#">July 26, 2018</a></div>
+										<div class="latest_news_title"><a href="#">How to get the best playlist</a></div>
+									</div>
+								</div>
+
+								<!-- Latest News -->
+								<div class="latest_news d-flex flex-row align-items-start justify-content-start">
+									<div class="latest_news_image"><img src="images/latest_3.jpg" alt="https://unsplash.com/@arstyy"></div>
+									<div class="latest_news_content">
+										<div class="latest_news_date"><a href="#">July 26, 2018</a></div>
+										<div class="latest_news_title"><a href="#">How to get the best playlist</a></div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -99,6 +175,53 @@
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+			<div class="newsletter_container">
+				<div class="newsletter_title"><h2>Subscribe to our newsletter</h2></div>
+				<form action="#" id="newsletter_form" class="newsletter_form">
+					<input type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
+					<button class="newsletter_button">Subscribe</button>
+				</form>
+			</div>
+			<div class="footer_lists d-flex flex-sm-row  flex-column align-items-start justify-content-start ml-xl-auto">
+
+				<!-- Useful Links -->
+				<div class="footer_list">
+					<div class="footer_list_title">Useful Links</div>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li><a href="#">Testimonials</a></li>
+						<li><a href="#">Music</a></li>
+						<li><a href="blog.html">News</a></li>
+					</ul>
+				</div>
+
+				<!-- Mixtape -->
+				<div class="footer_list">
+					<div class="footer_list_title">Mixtape</div>
+					<ul>
+						<li><a href="#">Music</a></li>
+						<li><a href="#">PR & Marketing</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Testimonials</a></li>
+					</ul>
+				</div>
+
+				<!-- Connect -->
+				<div class="footer_list">
+					<div class="footer_list_title">Connect</div>
+					<ul>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">Shippings</a></li>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Social Media</a></li>
+						<li><a href="#">Soundcloud</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
 		<div class="copyright_bar">
 			<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
