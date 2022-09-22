@@ -8,12 +8,16 @@
 <meta name="description" content="Mixtape template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="{% static 'blog/styles/bootstrap-4.1.2/bootstrap.min.css' %}">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'blog/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'blog/plugins/OwlCarousel2-2.2.1/animate.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'blog/styles/contact.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'blog/styles/contact_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/elements.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/elements_responsive.css' %}">'
+<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/single.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'blog/styles/single_responsive.css' %}">
 </head>
 <body>
 
@@ -108,16 +112,21 @@
 <!--						{{form}}-->
 <!--						<input type="submit" value="submit">-->
 <!--					</form>-->
-					<div>
+					<div class="col-lg-12">
 					{% block content %}
 						<h1>Create Album Cover</h1>
-						<hr/>
-						<form method="post" enctype="multipart/form-data">
-							{% csrf_token %}
-							{{ form }}
-							<hr/>
-							<input type="submit" value="Submit">
-						</form>
+						<br>
+						<div class="mb-3">
+							<form method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								{{ form.lyrics }}
+								<br>
+<!--								<input type="submit" value="Submit">-->
+								<button type="submit" class="button button_3 trans_200 float-right">Submit</button>
+							</form>
+						</div>
+					</div>
+					<div>
 						{% if form.is_valid %}
 						<p> The model predicted text: <b>{{ lyrics_post }}</b></p>
 						<p> The model predicted summary: <b>{{ summary }}</b></p>
@@ -125,6 +134,7 @@
 						<p> The model predicted image: {{ image }}</p>
 						{% endif %}
 					{% endblock %}
+					</div>
 <!--						<div class="contact_info_list">-->
 <!--							<ul>-->
 <!--								<li class="d-flex flex-row align-items-start justify-content-start">-->
@@ -141,6 +151,7 @@
 <!--								</li>-->
 <!--							</ul>-->
 <!--						</div>-->
+
 						<div class="social">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
@@ -158,7 +169,6 @@
 	</div>
 
 	<!-- Footer -->
-
 	<footer class="footer">
 		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
 			<div class="newsletter_container">

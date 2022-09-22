@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ModelForm
 from .models import Predictions
 from .preprocessing import text_preprocessing
+from .summary import KoBART2Image
 
 def landing(request):
     return render(
@@ -33,10 +34,12 @@ def predict_model(request):
         if form.is_valid():
             lyrics = form.cleaned_data['lyrics']
             result = text_preprocessing(lyrics)
+            summary = KoBART2Image(result)
             Predictions.objects.create(lyrics=lyrics,
-                                       lyrics_post=result)
+                                       lyrics_post=result,
+                                       summary=summary)
 
-            return render(request, 'single_pages/create.html', {'form': form, 'lyrics': lyrics, 'lyrics_post': result})
+            return render(request, 'single_pages/create.html', {'form': form, 'lyrics': lyrics, 'lyrics_post': result, 'summary': summary})
     else:
         form = ModelForm()
 
