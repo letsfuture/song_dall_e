@@ -1,0 +1,38 @@
+{% extends 'blog/base_full_width.html' %}
+
+{% block head_title %} Create Post - Song DALL-E{% endblock %}
+
+{% block main_area %}
+	<h1>Create Album Cover</h1>
+	<hr/>
+<!--	<hr/>-->
+<!--	<form method="post" enctype="multipart/form-data">{% csrf_token %}-->
+<!--		<table>-->
+<!--			{{ form }}-->
+<!--		</table>-->
+<!--		<button type="submit" class="btn btn-primary float-right">Submit</button>-->
+<!--	</form>-->
+
+
+<!--		<div class="mb-3">-->
+<!--			<form method="post" enctype="multipart/form-data">-->
+<!--				{% csrf_token %}-->
+<!--				<textarea class="form-control" name="content" id="content" rows="3"></textarea>-->
+<!--				<hr/>-->
+<!--				<button type="submit" class="button button_3 trans_200 float-right">Submit</button>-->
+<!--			</form>-->
+<!--		</div>-->
+
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form }}
+		<hr/>
+		<input type="submit" value="Submit">
+	</form>
+	{% if form.is_valid %}
+	<p> The model predicted text: <b>{{ lyrics_post }}</b></p>
+	<p> The model predicted summary: <b>{{ summary }}</b></p>
+	<p> The model predicted translate: <b>{{ translate }}</b></p>
+	<p> The model predicted image: {{ image }}</p>
+	{% endif %}
+{% endblock %}

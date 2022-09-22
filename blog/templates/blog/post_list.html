@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block main_area %}
-
+	<a calss="btn btn-info btn-sm float-right" href="/blog/create_post/" role="button"><i class="fas fa-pen"></i>&nbsp;&nbsp;New Post</a>
 	<h1>Song DALL-E {% if category %}<span class="badge badge-secondary">{{ category }}</span>{% endif %}</h1>
 	{% if post_list.exists %}
 		{% for p in post_list %}
@@ -30,7 +30,6 @@
 				<div class="blog_post_info">
 					<ul class="d-flex flex-row align-items-start justify-content-start">
 						<li>by <a href="#">{{ p.author | upper }}</a></li>
-						<li><a href="#">2 Comments</a></li>
 					</ul>
 				</div>
 				<div class="blog_post_text">
@@ -38,7 +37,7 @@
 				</div>
 					<br>
 	<!--					<a href="{{p.get_absolute_url}}" class="btn btn-outline-light">Read More &rarr;</a>-->
-					<div class="button button_3 trans_200"><a href="{{p.get_absolute_url}}">Read More →</a></div>
+					<div class="button button_3 trans_200"><a href="{{p.get_absolute_url}}">Read More</a></div>
 			</div>
 		{% endfor %}
 	{% else %}

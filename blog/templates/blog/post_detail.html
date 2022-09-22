@@ -1,5 +1,4 @@
 {% extends 'blog/base.html' %}
-
 {% block head_title %}
 	{{ post.title }} - Song DALL-E
 {% endblock %}
@@ -29,6 +28,7 @@
 									<li><span>Release date: </span>{{ post.created_at }}</li>
 									<li><span>Tags: </span>태그를 넣을 예정</li>
 									<li><span>Writer: </span>{{ post.author | upper }}</li>
+									<a calss="btn btn-info btn-sm float-right" href="/blog/result/" role="button"><i class="fas fa-pen"></i>&nbsp;&nbsp;Result</a>
 								</ul>
 							</div>
 						</div>
@@ -39,7 +39,6 @@
 						<div class="single_content">
 							<div class="single_text">
 								<p>{{ post.content }}</p>
-
 								{% if post.file_upload %}
 									<a href="{{ post.file_upload.url }}" class="btn btn-outline-light" role="button" download>
 										Download:

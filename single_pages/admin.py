@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Predictions
 
-# Register your models here.
+@admin.register(Predictions)
+class PredictionsAdmin(admin.ModelAdmin):
+    pass
